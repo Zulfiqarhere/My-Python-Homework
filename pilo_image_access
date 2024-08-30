@@ -1,0 +1,15 @@
+from PIL import Image  # Import the Image class from the Pillow library
+
+# Define the path to the image file
+image_path = r'C:\Users\Zulfiqar\Desktop\IMG_20201114_153741.jpg'  # The 'r' before the string indicates a raw string (prevents issues with backslashes)
+
+try:
+    # Try to open the image file
+    img = Image.open(image_path)  # Open the image file
+    img.show()  # Display the image in the default image viewer
+except FileNotFoundError:
+    # Handle the case where the image file is not found at the specified path
+    print("The specified image file could not be found.")  # Inform the user that the file wasn't found
+except Exception as e:
+    # Handle any other exceptions that may occur
+    print(f"An error occurred: {e}")  # Print the error message
